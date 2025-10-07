@@ -1,5 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const Navbar = () => {
     return (
@@ -16,19 +20,21 @@ const Navbar = () => {
         <NavLink to='/'>Home</NavLink>
         </li>
           <li>
-        <NavLink to='/products'>Product</NavLink>
+        <NavLink to='/app'>Apps</NavLink>
         </li>
           <li>
-        <NavLink to='/wishlist'>WishList</NavLink>
+        <NavLink to='/install'>Installation</NavLink>
         </li>
       </ul>
     </div>
-    <Link to='/' className="btn  text-xl">HomeDecor</Link>
+    <Link to='/' className="btn  text-xl">
+    <img src="https://i.ibb.co.com/V0qgB0hm/logo.png" className='h-5 w-5' alt="" srcset="" />
+    HERO.IO</Link>
   </div>
   <div className="navbar-center">
    
   </div>
-  <div className="navbar-end ">
+  <div className="navbar-center ">
   
 
      <ul className="menu menu-horizontal px-1  hidden lg:flex">
@@ -36,15 +42,19 @@ const Navbar = () => {
         <NavLink to='/'>Home</NavLink>
         </li>
           <li>
-        <NavLink to='/products'>Product</NavLink>
+        <NavLink to='/app'>Apps</NavLink>
         </li>
           <li>
-        <NavLink to='/wishlist'>WishList</NavLink>
+        <NavLink to='/install'>Installation</NavLink>
         </li>
         </ul>
 
-      <NavLink to='/products' className='btn'>Visit Shop</NavLink>
+    
    
+  </div>
+  <div className=' navbar-end'>
+      <NavLink to={'https://github.com/Badsha012'} className='btn text-white bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)100%)]'> <FontAwesomeIcon icon={faGithub} className="mr-2" />
+Contribute</NavLink>
   </div>
 </div>
     );
