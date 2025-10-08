@@ -3,7 +3,7 @@ import React from 'react';
 const AppCard = ({app}) => {
     // console.log(app);
     return (
-     <div>
+     
      <div className="card bg-base-100 w-75 h-full shadow-sm">
   <figure className='h-48 overflow-hidden'>
     <img
@@ -26,7 +26,7 @@ const AppCard = ({app}) => {
 </div>
 
 
-     </div>
+     
 
 
     );

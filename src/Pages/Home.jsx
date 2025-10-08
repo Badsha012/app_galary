@@ -22,15 +22,15 @@ const Home = () => {
           truly make an impact.
         </p>
       </div>
-      <div className="flex justify-center gap-4 text-xl  bg-gray-100 font-semibold px-5  py-4">
+      <div className="flex justify-center gap-4 text-2xl  bg-gray-100 font-semibold px-5  py-4">
         <Link
-          className="border "
+          className="btn text-xl hover:text-violet-600 "
           to={"https://play.google.com/store/apps?hl=en"}
         >
           {" "}
           <FontAwesomeIcon icon={faGooglePlay} className="br-2" /> Google Play
         </Link>
-        <Link className="border" to={"https://www.apple.com/app-store/"}>
+        <Link className="btn text-xl hover:text-violet-600" to={"https://www.apple.com/app-store/"}>
           {" "}
           <FontAwesomeIcon icon={faAppStoreIos} className="br-2 " />
           App Store
@@ -83,7 +83,7 @@ const Home = () => {
 }
 </div>
 <div className="flex justify-center py-10">
-  <Link to='/install' className='btn bg-violet-600 text-white'> show all</Link>
+  <Link to='/app' className='btn bg-violet-600 text-white'> Show all</Link>
 </div>
 
     </div>
