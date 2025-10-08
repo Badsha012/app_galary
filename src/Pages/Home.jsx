@@ -21,12 +21,34 @@ const Home = () => {
         <img src="https://i.ibb.co.com/LzJDW19w/hero.png" className="w-140 h-80 " alt="hero" srcset="" />
 
      </div>
-     <div className="bg-violet-700 text-white">
-        <h1 className="text-3xl">Trusted by Millions, Built for You</h1>
+     <div className="bg-violet-500 text-white py-10 ">
+        <h1 className="text-4xl font-bold text-center ">Trusted by Millions, Built for You</h1>
+        
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5 w-2/3 mx-auto py-5 p-10 text-center">
+            <div className="px-8">
+                <p className="text-gray-300">Total Downloads</p>
+                <h1 className="text-5xl  font-bold">29.6M</h1>
+                <p className="text-gray-300">21% more than last month</p>
+            </div>
+              <div>
+                <p  className="text-gray-300">Total Reviews</p>
+                <h1 className="text-5xl  font-bold">906K</h1>
+                <p className="text-gray-300">46% more than last month</p>
+            </div>
+              <div>
+                <p className="text-gray-300">Active Apps</p>
+                <h1 className="text-5xl font-bold">132+</h1>
+                <p className="text-gray-300">31 more will Launch</p>
+            </div>
+     </div>
+     </div>
+
+
+     
         
      </div>
 
-    </div>
+    
 
 
   );
