@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 import { faAppStoreIos } from "@fortawesome/free-brands-svg-icons";
+import AppCard from "../Components/AppCard";
 
 const Home = () => {
     const apps=useLoaderData()
@@ -72,13 +73,15 @@ const Home = () => {
         <h1 className="text-4xl font-bold text-center">Trending Apps</h1>
         <p className="text-center">Explore All Trending Apps on the Market developed by us</p>
       </div>
-
+<div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 gap-4 p-5">
+    
 {
     apps.map(app =>{
         
-        return <h1>{app.title}</h1>
+        return <AppCard key={app.id} app={app}></AppCard>
     })
 }
+</div>
 
     </div>
 
