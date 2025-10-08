@@ -71,7 +71,7 @@ const Home = () => {
 
       <div className="py-10">
         <h1 className="text-4xl font-bold text-center">Trending Apps</h1>
-        <p className="text-center">Explore All Trending Apps on the Market developed by us</p>
+        <p className="text-center sm:space-y-2">Explore All Trending Apps on the Market developed by us</p>
       </div>
 <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 gap-4 p-5">
     
@@ -81,6 +81,9 @@ const Home = () => {
         return <AppCard key={app.id} app={app}></AppCard>
     })
 }
+</div>
+<div className="flex justify-center py-10">
+  <Link to='/install' className='btn bg-violet-600 text-white'> show all</Link>
 </div>
 
     </div>
