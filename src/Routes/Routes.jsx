@@ -7,6 +7,7 @@ import Home from "../Pages/Home.jsx";
 import App from "../App.jsx";
 import Installion from "../Pages/Installion.jsx";
 import Apps from "../Pages/Apps.jsx";
+import ErrorPage from "../Components/ErrorPage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
     }
 ]
   },
+
+  {
+    path:'/',
+    element:<ErrorPage></ErrorPage>,
+  }
 ]);
 
 
