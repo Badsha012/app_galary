@@ -40,7 +40,7 @@ const Home = () => {
       <div className="flex justify-center items-center">
         <img
           src="https://i.ibb.co.com/LzJDW19w/hero.png"
-          className="w-140 h-80 "
+          className="md:w-140 md:h-80 sm:w-100 sm:h-60 "
           alt="hero"
           srcset=""
         />
