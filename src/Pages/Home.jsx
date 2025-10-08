@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 import { faAppStoreIos } from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
+    const apps=useLoaderData()
+    console.log(apps);
   return (
     <div className="bg-gray-100">
       <div className="text-center sm:p-4 ">
-        <h1 className=" md:text-5xl sm:text-2xl text-center font-bold text-black  py-1">
+        <h1 className=" md:text-5xl text-4xl text-center font-bold text-black  py-1">
           We Build<br></br>{" "}
           <span className=" text-violet-700"> Productive </span>Apps
         </h1>
@@ -70,7 +72,17 @@ const Home = () => {
         <h1 className="text-4xl font-bold text-center">Trending Apps</h1>
         <p className="text-center">Explore All Trending Apps on the Market developed by us</p>
       </div>
+
+{
+    apps.map(app =>{
+        
+        return <h1>{app.title}</h1>
+    })
+}
+
     </div>
+
+   
   );
 };
 
