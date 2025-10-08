@@ -7,12 +7,15 @@ import Home from "../Pages/Home.jsx";
 import App from "../App.jsx";
 import Installion from "../Pages/Installion.jsx";
 import Apps from "../Pages/Apps.jsx";
-import ErrorPage from "../Components/ErrorPage.jsx";
+import ErrorPage from "../Pages/ErrorPage.jsx";
+import Error from "../Pages/Error.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
 
     element:<Root></Root>,
+    errorElement:<Error></Error>,
 
     children:[
         {
@@ -31,11 +34,13 @@ const router = createBrowserRouter([
     }
 ]
   },
+  // {
+  //   path:'*',
+  //   element:<ErrorPage></ErrorPage>
 
-  {
-    path:'/',
-    element:<ErrorPage></ErrorPage>,
-  }
+  // }
+
+ 
 ]);
 
 
