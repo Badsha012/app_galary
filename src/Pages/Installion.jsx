@@ -1,8 +1,9 @@
-import React from "react";
+import React, {  } from "react";
 import { useLoaderData } from "react-router";
 import MyinstallApps from "../Components/MyinstallApps";
 
 const Installion = () => {
+      
   const installapp = useLoaderData();
   console.log(installapp);
   return (
