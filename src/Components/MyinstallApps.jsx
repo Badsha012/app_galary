@@ -1,6 +1,12 @@
 import React from 'react';
 
+import { toast } from "react-toastify";
+
 const MyinstallApps = ({install}) => {
+
+    const hanleUnistall =() =>{
+        toast.info(` has been unistalled !`)
+    }
     return (
         <div>
                 <div className="flex items-center justify-between bg-white rounded-xl border shadow p-4 hover:shadow-md transition">
@@ -22,7 +28,7 @@ const MyinstallApps = ({install}) => {
       </div>
 
       {/* Right section */}
-      <button className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-4 py-1 rounded-md">
+      <button onClick={hanleUnistall} className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-4 py-1 rounded-md">
         Uninstall
       </button>
     </div>
