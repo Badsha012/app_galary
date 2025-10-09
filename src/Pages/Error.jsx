@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouteError } from 'react-router';
+import Footer from '../Components/Footer';
 
 
 
@@ -15,10 +16,16 @@ const Error = () => {
     <h1 className='text-3xl font-bold'>Oops, page not found!</h1>
     <p className='text-gray-400'>The page you are looking for is not available.</p>
   </div>
- 
+
 
   </div>;
 
 };
 
 export default Error;
+
+
+
+
+
+
