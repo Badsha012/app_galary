@@ -6,6 +6,9 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 const Navbar = () => {
+
+    const activeStyle = "text-violet-600 font-semibold border-b-2 border-violet-600 pb-1";
+  const normalStyle = "text-gray-700 hover:text-violet-600 transition";
     return (
        <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -17,18 +20,18 @@ const Navbar = () => {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
        <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Home</NavLink>
         </li>
           <li>
-        <NavLink to='/app'>Apps</NavLink>
+        <NavLink to='/app' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Apps</NavLink>
         </li>
           <li>
-        <NavLink to='/install'>Installation</NavLink>
+        <NavLink to='/install' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Installation</NavLink>
         </li>
       </ul>
     </div>
     <Link to='/' className="btn  text-xl">
-    <img src="https://i.ibb.co.com/V0qgB0hm/logo.png" className='h-5 w-5' alt="" srcset="" />
+    <img src="https://i.ibb.co.com/V0qgB0hm/logo.png" className='h-5 w-5' alt="" />
     HERO.IO</Link>
   </div>
   <div className="navbar-center">
@@ -39,13 +42,13 @@ const Navbar = () => {
 
      <ul className="menu menu-horizontal px-1  hidden lg:flex">
       <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Home</NavLink>
         </li>
           <li>
-        <NavLink to='/app'>Apps</NavLink>
+        <NavLink to='/app' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Apps</NavLink>
         </li>
           <li>
-        <NavLink to='/install'>Installation</NavLink>
+        <NavLink to='/install'className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Installation</NavLink>
         </li>
         </ul>
 
