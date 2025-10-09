@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router";
 const Installion = () => {
   const installapp = useLoaderData();
   console.log(installapp);
-
   return (
     <div className="bg-gray-100 text-center py-10">
       <h1 className="text-3xl font-semibold">Your Installed Apps</h1>
