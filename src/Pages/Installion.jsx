@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import MyinstallApps from "../Components/MyinstallApps";
 
 const Installion = () => {
   const installapp = useLoaderData();
@@ -41,9 +42,9 @@ const Installion = () => {
         </div>
       </div>
 
-      <div className=" py-8 flex flex-col">
+      <div className=" py-8 flex flex-col gap-5 p-10">
         {installapp.map((install) => {
-          return <h1>{install.title}</h1>;
+          return <MyinstallApps install={install}></MyinstallApps>
         })}
       </div>
     </div>
