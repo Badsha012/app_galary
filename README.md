@@ -1,16 +1,78 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎮 App Galary
 
-Currently, two official plugins are available:
+A responsive React + Vite web application to browse, search, and manage mobile apps.  
+Users can see app details, install/uninstall apps, review ratings, and view charts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧰 Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React  
+- Vite  
+- React Router DOM  
+- Tailwind CSS (plus any UI library if used)  
+- Recharts (for charting reviews)  
+- React Toastify (for notifications / toasts)  
+- LocalStorage (for persisting installed apps)  
+- FontAwesome (for icons)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- Responsive layout for desktop, tablet, and mobile  
+- Header with logo, navigation links (Home, Apps, Installation) and active route highlighting  
+- Footer with custom design  
+- Home page:
+  - Hero banner with “App Store” & “Play Store” buttons  
+  - Top apps section (shows number of apps, image, rating, downloads)  
+  - “Show All” button to go to all apps page  
+
+- All Apps page:
+  - Live search (case-insensitive)  
+  - Displays all apps from JSON data  
+  - If no results, shows “No App Found” message  
+
+- App Details page:
+  - Show app image, title, downloads, ratings, description  
+  - Install button: once clicked, becomes “Installed” and disables  
+  - Toast notification on successful install  
+  - Chart (using Recharts) visualizing ratings breakdown  
+
+- My Installation page (Challenge part):
+  - Shows all apps user installed (from localStorage)  
+  - Uninstall functionality (removes from UI & localStorage)  
+  - Toast on uninstall  
+
+- Sorting:
+  - Dropdown for sorting apps by downloads (High → Low, Low → High)
+
+- Custom Error page for invalid routes  
+- Loading animations (for page navigation, search, etc.)
+
+---
+
+## 🗂 Data Structure
+
+The app data is an array of objects with the structure:
+
+```json
+{
+  "id": 1,
+  "image": "https://example.com/app-image.png",
+  "title": "Photo Editor Pro",
+  "companyName": "Snapify",
+  "description": "A powerful photo editing tool with filters, layers, and more.",
+  "size": 45,
+  "reviews": 1200,
+  "ratingAvg": 4.3,
+  "downloads": 150000,
+  "ratings": [
+    { "name": "1 star", "count": 50 },
+    { "name": "2 star", "count": 100 },
+    { "name": "3 star", "count": 200 },
+    { "name": "4 star", "count": 350 },
+    { "name": "5 star", "count": 500 }
+  ]
+}
