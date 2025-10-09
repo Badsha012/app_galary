@@ -33,6 +33,7 @@ const router = createBrowserRouter([
 
     {
         path:"/install",
+        loader:() =>fetch('./allappsdata.json'),
         element:<Installion></Installion>
     }
 ]

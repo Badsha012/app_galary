@@ -7,7 +7,7 @@ import AppCard from "../Components/AppCard";
 
 const Home = () => {
     const apps=useLoaderData()
-    console.log(apps);
+  
   return (
     <div className="bg-gray-100">
       <div className="text-center sm:p-4 ">
