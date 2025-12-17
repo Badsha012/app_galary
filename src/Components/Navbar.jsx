@@ -28,6 +28,9 @@ const Navbar = () => {
           <li>
         <NavLink to='/install' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Installation</NavLink>
         </li>
+          <li>
+        <NavLink to='/contact' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Contact</NavLink>
+        </li>
       </ul>
     </div>
     <Link to='/' className="btn  text-xl">
@@ -49,6 +52,9 @@ const Navbar = () => {
         </li>
           <li>
         <NavLink to='/install'className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Installation</NavLink>
+        </li>
+          <li>
+        <NavLink to='/contact' className={({isActive})=>(isActive ? activeStyle :normalStyle)}>Contact</NavLink>
         </li>
         </ul>
 

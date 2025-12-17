@@ -8,6 +8,7 @@ import Apps from "../Pages/Apps.jsx";
 import Error from "../Pages/Error.jsx";
 
 import AppDetail from "../Pages/AppDetail.jsx";
+import Contact from "../Pages/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         loader: () => fetch("/allappsdata.json"),
         element: <Installion />,
       },
+      {
+        path:"contact",
+        element:<Contact></Contact>
+      }
     ],
   },
   {
