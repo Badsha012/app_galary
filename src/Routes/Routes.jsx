@@ -6,7 +6,8 @@ import Home from "../Pages/Home.jsx";
 import Installion from "../Pages/Installion.jsx";
 import Apps from "../Pages/Apps.jsx";
 import Error from "../Pages/Error.jsx";
-import AppDetails from "../Pages/AppDetails.jsx";
+
+import AppDetail from "../Pages/AppDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/app/:id",
-    element: <AppDetails />,
+    element: <AppDetail />,
     loader: async ({ params }) => {
       const res = await fetch("/allappsdata.json");
       const data = await res.json();
