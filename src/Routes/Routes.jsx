@@ -9,6 +9,7 @@ import Error from "../Pages/Error.jsx";
 
 import AppDetail from "../Pages/AppDetail.jsx";
 import Contact from "../Pages/Contact.jsx";
+import About from "../Pages/About.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path:"contact",
         element:<Contact></Contact>
+      },
+      {
+        path:"about",
+        element:<About></About>
       }
     ],
   },

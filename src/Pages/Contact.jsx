@@ -27,7 +27,7 @@ const Contact = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-emerald-400" />
-                  <span>+880 1XXX-XXXXXX</span>
+                  <span>+880 1998414834</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-emerald-400" />

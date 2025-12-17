@@ -1,31 +1,26 @@
-
-
-
 import React, { useState } from "react";
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router-dom";
 import Allapps from "../Components/Allapps";
 
 const Apps = () => {
   const allapp = useLoaderData() || [];
   const [searchTerm, setSearchTerm] = useState("");
 
-  // ✅ Filter apps based on title or companyName
+  // Filter apps based on title or companyName
   const filteredApps = allapp.filter((app) => {
     const text = `${app?.title || ""} ${app?.companyName || ""}`.toLowerCase();
     return text.includes(searchTerm.toLowerCase());
   });
 
   return (
-    <div className="text-center py-10 bg-gray-100">
-      <h1 className="text-3xl font-bold">Our All Applications</h1>
+    <div className="text-center py-10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 backdrop-blur">
+      <h1 className="text-3xl text-white font-bold">Our All Applications</h1>
       <p className="text-gray-400">
         Explore All Apps on the Market developed by us. We code for Millions
       </p>
 
       <div className="flex justify-between p-10">
-        <h1 className="text-xl font-semibold">
-          ({filteredApps.length}) Apps Found
-        </h1>
+        <h1 className="text-xl text-amber-100 font-semibold">({filteredApps.length}) Apps Found</h1>
         <label className="input flex items-center border rounded px-2 py-1">
           <svg
             className="h-[1em] opacity-50 mr-2"
@@ -59,15 +54,20 @@ const Apps = () => {
             <Allapps key={allapps.id} allapps={allapps} />
           ))
         ) : (
-      <div className="flex flex-col justify-center text-center items-center  ">
-        <img src="https://i.ibb.co.com/ynHdJS7p/App-Error.png" alt="" className="w-72  " srcset="" />
-     
-       
-        <h1 className="text-xl  font-semibold">OPPS!! APP NOT FOUND</h1>
-        <p className="text-gray-400">The App you are requesting is not found on our system.  please try another apps</p>
-        <Link to='/' className="btn bg-violet-600 text-white">Go Back!</Link>
-      </div>
-          
+          <div className="flex flex-col justify-center text-center items-center">
+            <img
+              src="https://i.ibb.co/ynHdJS7p/App-Error.png"
+              alt="App Not Found"
+              className="w-72"
+            />
+            <h1 className="text-xl font-semibold">OPPS!! APP NOT FOUND</h1>
+            <p className="text-gray-400">
+              The App you are requesting is not found on our system. Please try another app.
+            </p>
+            <Link to="/" className="btn bg-violet-600 text-white mt-4">
+              Go Back!
+            </Link>
+          </div>
         )}
       </div>
     </div>
@@ -75,5 +75,3 @@ const Apps = () => {
 };
 
 export default Apps;
-
- 

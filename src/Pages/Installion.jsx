@@ -1,66 +1,49 @@
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
-import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom"; 
-import MyinstallApps from "../Components/MyinstallApps";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+const Installation = () => {
+  // URL থেকে app id পাওয়া
+  const { id } = useParams();
 
-const Installion = () => {
-  
-  const data = useLoaderData();
-  const [installApps, setInstallApps] = useState(data);
+  // যদি loader ব্যবহার করো
+  const apps = useLoaderData() || [];
+  const app = apps.find((a) => a.id === id);
 
-  
-  const handleUninstall = (id) => {
-    const remaining = installApps.filter((app) => app.id !== id);
-    setInstallApps(remaining);
-  };
+  if (!app) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <h1 className="text-3xl font-bold">App Not Found</h1>
+        <p className="mt-2 text-gray-500">
+          The app you are looking for does not exist in our system.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <div className="bg-gray-100 text-center py-10">
-      <h1 className="text-3xl font-semibold">Your Installed Apps</h1>
-      <p className="text-gray-400">
-        Explore All Trending Apps on the Market developed by us
-      </p>
+    <div className="max-w-4xl mx-auto py-10 px-6 space-y-8 text-center">
+      <h1 className="text-4xl font-bold">{app.title}</h1>
+      <img
+        src={app.image}
+        alt={app.title}
+        className="mx-auto w-64 h-64 object-cover rounded-xl shadow-lg"
+      />
+      <p className="text-gray-600 mt-4">{app.description}</p>
 
-      
-      <div className="flex justify-between items-center p-8">
-        <h1>Apps Found ({installApps.length})</h1>
-
-        <div className="relative inline-block group">
-          <button className="bg-gray-100 text-gray-800 px-4 py-2 text-sm border border-gray-300 rounded-md hover:bg-gray-200 transition">
-            Sort By Size +
-          </button>
-
-          <div className="hidden absolute bg-white min-w-[120px] border border-gray-300 rounded-md shadow-md group-hover:block mt-1 z-10">
-            <a href="#" className="block px-3 py-2 text-gray-800 hover:bg-gray-100">
-              Small
-            </a>
-            <a href="#" className="block px-3 py-2 text-gray-800 hover:bg-gray-100">
-              Medium
-            </a>
-            <a href="#" className="block px-3 py-2 text-gray-800 hover:bg-gray-100">
-              Large
-            </a>
-          </div>
-        </div>
+      <div className="mt-6 flex justify-center gap-4">
+        <a
+          href={app.apkLink || "#"} // যদি apk download link থাকে
+          className="rounded-full bg-emerald-500 px-6 py-3 font-semibold text-white hover:opacity-90 transition"
+        >
+          Download APK
+        </a>
+        <button className="rounded-full bg-sky-500 px-6 py-3 font-semibold text-white hover:opacity-90 transition">
+          Install Now
+        </button>
       </div>
-
-      
-      <div className="py-8 flex flex-col gap-5 p-10">
-        {installApps.map((install) => (
-          <MyinstallApps
-            key={install.id}
-            install={install}
-            onUninstall={handleUninstall}
-          />
-        ))}
-      </div>
-
-      
-      <ToastContainer position="top-right" autoClose={3000} theme="colored" />
     </div>
   );
 };
 
-export default Installion;
+export default Installation;
