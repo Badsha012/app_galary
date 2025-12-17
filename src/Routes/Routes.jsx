@@ -1,15 +1,15 @@
-
-
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../RootLayout/Root.jsx";
 import Home from "../Pages/Home.jsx";
-import Installion from "../Pages/Installion.jsx";
+//import Installation from "../Pages/Installation.jsx"; // নাম ঠিক করা
 import Apps from "../Pages/Apps.jsx";
 import Error from "../Pages/Error.jsx";
 
 import AppDetail from "../Pages/AppDetail.jsx";
 import Contact from "../Pages/Contact.jsx";
 import About from "../Pages/About.jsx";
+import Installation from "../Pages/Installion.jsx";
+import MyInstallapp from "../Pages/MyInstallapp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,18 +29,29 @@ const router = createBrowserRouter([
         element: <Apps />,
       },
       {
-        path: "install",
-        loader: () => fetch("/allappsdata.json"),
-        element: <Installion />,
+        path:"install",
+        element:<MyInstallapp></MyInstallapp>
       },
       {
-        path:"contact",
-        element:<Contact></Contact>
+        
+        path: "installation/:id",
+        loader: async ({ params }) => {
+          const res = await fetch("/allappsdata.json");
+          const data = await res.json();
+          const app = data.find((a) => a.id === parseInt(params.id));
+          if (!app) throw new Response("App Not Found", { status: 404 });
+          return app;
+        },
+        element: <Installation />,
       },
       {
-        path:"about",
-        element:<About></About>
-      }
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
     ],
   },
   {
@@ -50,11 +61,10 @@ const router = createBrowserRouter([
       const res = await fetch("/allappsdata.json");
       const data = await res.json();
       const app = data.find((app) => app.id === parseInt(params.id));
-      if (!app) throw new Response();
+      if (!app) throw new Response("App Not Found", { status: 404 });
       return app;
     },
   },
 ]);
 
 export default router;
-
