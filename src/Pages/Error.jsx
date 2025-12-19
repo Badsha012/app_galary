@@ -2,8 +2,6 @@ import React from 'react';
 import { useRouteError } from 'react-router';
 import Footer from '../Components/Footer';
 
-
-
 const Error = () => {
  
 
