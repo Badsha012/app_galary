@@ -11,8 +11,6 @@ const AppDetail = () => {
 
       <AppDetails></AppDetails>
       <Footer></Footer>
-
-      
       
     </div>
   );
